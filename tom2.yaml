@@ -3,7 +3,13 @@
   remote_user: ansible
   become: yes
   tasks:
-    - name: installs everything
+
+    - name: install jdk
+      apt:
+        name: openjdk-8-jdk
+        state: present
+
+    - name: installs tomcat
       apt:
         name: tomcat9
         state: latest
